@@ -1,6 +1,6 @@
 # Laravel CLI Task Manager
 
-This project is a Laravel-based CLI Task Manager, allowing users to manage tasks directly from the command line using Artisan commands. It was created as part of a Medium article, which you can read here: [Medium Article](<YOUR_MEDIUM_ARTICLE_LINK_HERE>).
+This project is a Laravel-based CLI Task Manager, allowing users to manage tasks directly from the command line using Artisan commands. It was created as part of a Medium article, which you can read here: [Medium Article](https://medium.com/@hendelRamzy/how-laravel-console-commands-works-todo-list-d6cfc2720174).
 
 ## Installation
 
