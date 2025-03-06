@@ -45,6 +45,16 @@ php artisan task:list
 ```
 If the `--all` option is not used, the command only shows tasks that are not completed.
 
+#### Example Output:
+```
++----+------------------------------+-----------------+-----------+
+| ID | Task                         | Created        | Done      |
++----+------------------------------+-----------------+-----------+
+| 1  | Write documentation          | 5 minutes ago  | uncompleted |
+| 2  | Setup project environment    | 10 minutes ago | completed   |
++----+------------------------------+-----------------+-----------+
+```
+
 ## Completing a Task
 
 To mark a task as completed, use:
