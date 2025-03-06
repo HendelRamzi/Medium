@@ -1,66 +1,72 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Laravel CLI Task Manager
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+This project is a Laravel-based CLI Task Manager, allowing users to manage tasks directly from the command line using Artisan commands. It was created as part of a Medium article, which you can read here: [Medium Article](<YOUR_MEDIUM_ARTICLE_LINK_HERE>).
 
-## About Laravel
+## Installation
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+1. Clone the repository:
+   ```sh
+   git clone <repository-url>
+   cd <project-directory>
+   ```
+2. Install dependencies:
+   ```sh
+   composer install
+   ```
+3. Set up your `.env` file and configure the database.
+4. Run migrations:
+   ```sh
+   php artisan migrate
+   ```
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Creating a New Task
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+To create a new task, use the following command:
+```sh
+php artisan task:create "Your Task Name" --description="Task description" --completed
+```
+- `Your Task Name`: The required name of the task.
+- `--description`: (Optional) A short description of the task.
+- `--completed`: (Optional) If provided, the task will be marked as completed.
 
-## Learning Laravel
+## Listing Tasks
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+You can list tasks in two ways:
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### List All Tasks
+```sh
+php artisan task:list --all
+```
+This command displays all tasks, regardless of their completion status.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### List Only Incomplete Tasks
+```sh
+php artisan task:list
+```
+If the `--all` option is not used, the command only shows tasks that are not completed.
 
-## Laravel Sponsors
+## Completing a Task
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+To mark a task as completed, use:
+```sh
+php artisan task:complete <task_id>
+```
+Replace `<task_id>` with the ID of the task you want to complete.
 
-### Premium Partners
+## Deleting a Task
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+To delete a task, run:
+```sh
+php artisan task:delete <task_id>
+```
+Replace `<task_id>` with the ID of the task you want to remove.
 
-## Contributing
+## What to Do Next?
+Here are some additional features you can implement:
+1. **Task Editing** - Add a command to edit an existing task.
+2. **Task Prioritization** - Implement a priority system for tasks.
+3. **Task Search** - Allow users to search for tasks by name or description.
+4. **Scheduled Tasks** - Use Laravel's scheduling feature to automate task reminders.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+---
+This project showcases the power of Laravel Artisan commands for managing tasks efficiently. Happy coding! 🚀
